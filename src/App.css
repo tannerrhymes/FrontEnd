@@ -2,6 +2,7 @@
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
+  text-align: center;
 }
 
 .logo {
@@ -41,119 +42,107 @@
 }
 
 .upload-container {
-  min-height: 100vh;
-  background-color: #121212;
+  /*min-height: 100vh;*/
   display: flex;
-  justify-content: center;
   align-items: center;
-  padding: 20px;
-  background: radial-gradient(circle at center, #1a1a1a 0%, #121212 100%);
+  justify-content: center;
+  background: #1a1a1a;
+  /*padding: 20px;*/
 }
 
 .upload-box {
-  background-color: #1a1a1a;
-  border-radius: 8px;
-  padding: 30px;
   width: 100%;
-  max-width: 800px;
-  min-height: 400px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  text-align: center;
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1),
-              0 2px 5px rgba(0, 0, 0, 0.2),
-              0 15px 40px rgba(0, 0, 0, 0.4);
+  max-width: 640px;
+  background: #1e1e1e;
+  border-radius: 8px;
+  padding: 32px;
+  box-shadow: 
+    0 0 0 1px rgba(255, 255, 255, 0.15),
+    0 4px 8px rgba(0, 0, 0, 0.4),
+    0 12px 32px rgba(0, 0, 0, 0.4),
+    0 20px 48px rgba(0, 0, 0, 0.4);
 }
 
 .upload-title {
   color: white;
-  font-size: 24px;
+  font-size: 32px;
   margin-bottom: 8px;
   font-weight: normal;
+  line-height: 1.2;
 }
 
 .upload-subtitle {
   color: #8d8d8d;
-  margin-bottom: 20px;
+  font-size: 18px;
+  margin-bottom: 32px;
 }
 
 .upload-area {
-  border: 2px dashed #3d3d3d;
+  border: 1px dashed #404040;
   border-radius: 4px;
-  padding: 40px 20px;
-  margin-bottom: 20px;
-  cursor: pointer;
-  transition: border-color 0.3s ease;
-  height: 200px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  padding: 64px 32px;
+  text-align: center;
+  transition: all 0.2s ease;
+  margin-bottom: 32px;
+  background: rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05);
 }
 
 .upload-area:hover {
-  border-color: #0061fe;
+  border-color: #0061FF;
+  background: rgba(0, 97, 255, 0.05);
+  box-shadow: 
+    inset 0 0 0 1px rgba(255, 255, 255, 0.05),
+    0 0 0 1px #0061FF,
+    0 0 0 4px rgba(0, 97, 255, 0.15);
+  cursor: pointer;
 }
 
 .upload-area.dragging {
-  border-color: #0061fe;
-  background-color: rgba(0, 97, 254, 0.05);
+  border-color: #0061FF;
+  background: rgba(0, 97, 255, 0.05);
+  box-shadow: 
+    inset 0 0 0 1px rgba(255, 255, 255, 0.05),
+    0 0 0 1px #0061FF,
+    0 0 0 4px rgba(0, 97, 255, 0.15);
+}
+
+.upload-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
 }
 
 .add-files-button {
-  background-color: white;
+  background: white;
   color: black;
   border: none;
-  padding: 8px 16px;
   border-radius: 4px;
-  font-size: 14px;
+  padding: 8px 16px;
+  font-size: 16px;
   cursor: pointer;
-  margin-bottom: 16px;
+  transition: background 0.2s ease;
+}
+
+.add-files-button:hover {
+  background: #f5f5f5;
 }
 
 .drag-text {
   color: #8d8d8d;
-  font-size: 14px;
-  margin: 0;
-}
-
-.dropbox-footer {
-  text-align: center;
-  color: #8d8d8d;
-  font-size: 12px;
-  margin-top: 15px;
-}
-
-.logo-container {
-  margin-bottom: 16px;
-}
-
-.footer-text {
-  line-height: 1.5;
-  color: #8d8d8d;
-  font-size: 12px;
-}
-
-.footer-text a {
-  color: #8d8d8d;
-  text-decoration: underline;
-}
-
-.footer-text a:hover {
-  color: white;
+  font-size: 16px;
 }
 
 .file-list {
-  margin-top: 20px;
-  text-align: left;
+  margin-top: 24px;
 }
 
 .file-item {
-  color: white;
-  padding: 8px;
-  margin: 4px 0;
-  background-color: rgba(255, 255, 255, 0.1);
+  background: #2a2a2a;
   border-radius: 4px;
-  font-size: 14px;
+  padding: 12px;
+  margin-bottom: 8px;
 }
 
 .file-info {
@@ -163,29 +152,58 @@
   margin-bottom: 8px;
 }
 
-.file-size {
-  color: #8d8d8d;
-  font-size: 12px;
+.filename {
+  color: white;
+  font-size: 14px;
 }
 
-.progress-bar-container {
-  background-color: rgba(255, 255, 255, 0.1);
-  height: 4px;
-  border-radius: 2px;
-  position: relative;
-  overflow: hidden;
+.status {
+  color: #8d8d8d;
+  font-size: 14px;
 }
 
 .progress-bar {
-  background-color: #0061fe;
+  height: 2px;
+  background: #404040;
+  border-radius: 1px;
+  overflow: hidden;
+}
+
+.progress-fill {
   height: 100%;
+  background: #0061FF;
   transition: width 0.3s ease;
 }
 
-.progress-text {
-  position: absolute;
-  right: 0;
-  top: -20px;
-  font-size: 12px;
+.dropbox-footer {
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid #404040;
+}
+
+.footer-text {
   color: #8d8d8d;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.footer-link {
+  color: #0061FF;
+  text-decoration: none;
+  transition: text-decoration 0.2s ease;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+}
+
+.error-message {
+  color: #ff4444;
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+.success-icon {
+  color: #00c851;
+  font-size: 16px;
 }
